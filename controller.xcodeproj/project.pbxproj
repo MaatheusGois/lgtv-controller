@@ -16,6 +16,8 @@
 		8231F0D42731A58400F00B48 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0D32731A58400F00B48 /* SocketHelper.swift */; };
 		8231F0D52731A58400F00B48 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0D32731A58400F00B48 /* SocketHelper.swift */; };
 		8231F0D92731A6F400F00B48 /* WebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 8231F0D82731A6F400F00B48 /* WebSocket */; };
+		8231F0DD2731AF4600F00B48 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0DC2731AF4600F00B48 /* Environment.swift */; };
+		8231F0DE2731AF4600F00B48 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0DC2731AF4600F00B48 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		8231F0C12731A55B00F00B48 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		8231F0D32731A58400F00B48 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		8231F0D62731A60400F00B48 /* controller--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "controller--iOS--Info.plist"; sourceTree = "<group>"; };
+		8231F0DC2731AF4600F00B48 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +66,8 @@
 			children = (
 				8231F0B22731A55900F00B48 /* controllerApp.swift */,
 				8231F0B32731A55900F00B48 /* ContentView.swift */,
-				8231F0D32731A58400F00B48 /* SocketHelper.swift */,
+				8231F0DB2731AF3200F00B48 /* Environment */,
+				8231F0DA2731AF1A00F00B48 /* Socket */,
 				8231F0B42731A55B00F00B48 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -84,6 +88,22 @@
 				8231F0C12731A55B00F00B48 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		8231F0DA2731AF1A00F00B48 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				8231F0D32731A58400F00B48 /* SocketHelper.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		8231F0DB2731AF3200F00B48 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				8231F0DC2731AF4600F00B48 /* Environment.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +213,7 @@
 				8231F0D42731A58400F00B48 /* SocketHelper.swift in Sources */,
 				8231F0C42731A55B00F00B48 /* ContentView.swift in Sources */,
 				8231F0C22731A55B00F00B48 /* controllerApp.swift in Sources */,
+				8231F0DD2731AF4600F00B48 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +224,7 @@
 				8231F0D52731A58400F00B48 /* SocketHelper.swift in Sources */,
 				8231F0C52731A55B00F00B48 /* ContentView.swift in Sources */,
 				8231F0C32731A55B00F00B48 /* controllerApp.swift in Sources */,
+				8231F0DE2731AF4600F00B48 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

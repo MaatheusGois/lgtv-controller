@@ -13,11 +13,12 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Text("Hello, world! STATE: \(socketHelper.isOpen ? "ON" : "OFF")")
+            Text("STATE: \(socketHelper.isOpen ? "ON" : "OFF")")
                 .padding()
-                .onTapGesture {
-                    socketHelper.connect()
-                }
+
+            Button("Connect") {
+                socketHelper.connect()
+            }
         }
     }
 }

@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct controllerApp: App {
+
+    init() {
+        setupEnvironment()
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+    }
+
+
+}
+
+fileprivate extension controllerApp {
+    func setupEnvironment() {
+        Environment.shared.log = .uat
     }
 }
