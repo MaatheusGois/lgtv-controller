@@ -18,6 +18,16 @@
 		8231F0D92731A6F400F00B48 /* WebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 8231F0D82731A6F400F00B48 /* WebSocket */; };
 		8231F0DD2731AF4600F00B48 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0DC2731AF4600F00B48 /* Environment.swift */; };
 		8231F0DE2731AF4600F00B48 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0DC2731AF4600F00B48 /* Environment.swift */; };
+		8231F0E1273377C700F00B48 /* Log+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0E0273377C700F00B48 /* Log+Extensions.swift */; };
+		8231F0E2273377C700F00B48 /* Log+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0E0273377C700F00B48 /* Log+Extensions.swift */; };
+		8231F0E527337B3100F00B48 /* ComunicationnDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0E427337B3000F00B48 /* ComunicationnDataModel.swift */; };
+		8231F0E627337B3100F00B48 /* ComunicationnDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0E427337B3000F00B48 /* ComunicationnDataModel.swift */; };
+		8231F0E82733807800F00B48 /* JsonFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0E72733807800F00B48 /* JsonFomatter.swift */; };
+		8231F0E92733807800F00B48 /* JsonFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0E72733807800F00B48 /* JsonFomatter.swift */; };
+		8231F0ED27338CFC00F00B48 /* CommonsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0EC27338CFC00F00B48 /* CommonsData.swift */; };
+		8231F0EE27338CFC00F00B48 /* CommonsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0EC27338CFC00F00B48 /* CommonsData.swift */; };
+		8231F0F027338D5F00F00B48 /* UserDefaultAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0EF27338D5F00F00B48 /* UserDefaultAccess.swift */; };
+		8231F0F127338D5F00F00B48 /* UserDefaultAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0EF27338D5F00F00B48 /* UserDefaultAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +40,11 @@
 		8231F0D32731A58400F00B48 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		8231F0D62731A60400F00B48 /* controller--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "controller--iOS--Info.plist"; sourceTree = "<group>"; };
 		8231F0DC2731AF4600F00B48 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		8231F0E0273377C700F00B48 /* Log+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+Extensions.swift"; sourceTree = "<group>"; };
+		8231F0E427337B3000F00B48 /* ComunicationnDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComunicationnDataModel.swift; sourceTree = "<group>"; };
+		8231F0E72733807800F00B48 /* JsonFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFomatter.swift; sourceTree = "<group>"; };
+		8231F0EC27338CFC00F00B48 /* CommonsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonsData.swift; sourceTree = "<group>"; };
+		8231F0EF27338D5F00F00B48 /* UserDefaultAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +79,12 @@
 		8231F0B12731A55900F00B48 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8231F0EB27338CEE00F00B48 /* CommonsData */,
+				8231F0EA2733811900F00B48 /* Helpers */,
+				8231F0E327337B1F00F00B48 /* Models */,
 				8231F0B22731A55900F00B48 /* controllerApp.swift */,
 				8231F0B32731A55900F00B48 /* ContentView.swift */,
+				8231F0DF273377B200F00B48 /* Extension */,
 				8231F0DB2731AF3200F00B48 /* Environment */,
 				8231F0DA2731AF1A00F00B48 /* Socket */,
 				8231F0B42731A55B00F00B48 /* Assets.xcassets */,
@@ -104,6 +123,39 @@
 				8231F0DC2731AF4600F00B48 /* Environment.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		8231F0DF273377B200F00B48 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8231F0E0273377C700F00B48 /* Log+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8231F0E327337B1F00F00B48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8231F0E427337B3000F00B48 /* ComunicationnDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8231F0EA2733811900F00B48 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8231F0E72733807800F00B48 /* JsonFomatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8231F0EB27338CEE00F00B48 /* CommonsData */ = {
+			isa = PBXGroup;
+			children = (
+				8231F0EC27338CFC00F00B48 /* CommonsData.swift */,
+				8231F0EF27338D5F00F00B48 /* UserDefaultAccess.swift */,
+			);
+			path = CommonsData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,9 +262,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8231F0E1273377C700F00B48 /* Log+Extensions.swift in Sources */,
+				8231F0E527337B3100F00B48 /* ComunicationnDataModel.swift in Sources */,
+				8231F0ED27338CFC00F00B48 /* CommonsData.swift in Sources */,
+				8231F0F027338D5F00F00B48 /* UserDefaultAccess.swift in Sources */,
 				8231F0D42731A58400F00B48 /* SocketHelper.swift in Sources */,
 				8231F0C42731A55B00F00B48 /* ContentView.swift in Sources */,
 				8231F0C22731A55B00F00B48 /* controllerApp.swift in Sources */,
+				8231F0E82733807800F00B48 /* JsonFomatter.swift in Sources */,
 				8231F0DD2731AF4600F00B48 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,9 +278,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8231F0E2273377C700F00B48 /* Log+Extensions.swift in Sources */,
+				8231F0E627337B3100F00B48 /* ComunicationnDataModel.swift in Sources */,
+				8231F0EE27338CFC00F00B48 /* CommonsData.swift in Sources */,
+				8231F0F127338D5F00F00B48 /* UserDefaultAccess.swift in Sources */,
 				8231F0D52731A58400F00B48 /* SocketHelper.swift in Sources */,
 				8231F0C52731A55B00F00B48 /* ContentView.swift in Sources */,
 				8231F0C32731A55B00F00B48 /* controllerApp.swift in Sources */,
+				8231F0E92733807800F00B48 /* JsonFomatter.swift in Sources */,
 				8231F0DE2731AF4600F00B48 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

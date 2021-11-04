@@ -19,8 +19,6 @@ struct controllerApp: App {
             ContentView()
         }
     }
-
-
 }
 
 fileprivate extension controllerApp {

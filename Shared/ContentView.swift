@@ -9,15 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject var socketHelper = SocketHelper()
+    @ObservedObject var socketHelper = SocketHelper(url: .init(string: "ws://192.168.18.3:3000")!)
 
     var body: some View {
-        ZStack {
-            Text("STATE: \(socketHelper.isOpen ? "ON" : "OFF")")
+        VStack {
+            Text("Socket: \(socketHelper.isOpen ? "ON" : "OFF")")
                 .padding()
 
-            Button("Connect") {
+            Button("Connect Socket") {
                 socketHelper.connect()
+            }.padding()
+
+            Button("Connect TV") {
+                socketHelper.register()
+            }.padding()
+
+            Button("Show message") {
+                socketHelper.showToast(message: "Message")
+            }.padding()
+
+            Button("Turn off") {
+                socketHelper.turnOff()
+            }.padding()
+
+        }.alert(
+            socketHelper.error,
+            isPresented: $socketHelper.errorIsPresented
+        ) {
+            Button("OK", role: .none) {
+                socketHelper.errorIsPresented = false
             }
         }
     }
