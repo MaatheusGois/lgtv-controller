@@ -115,9 +115,12 @@ class SocketHelper: ObservableObject {
         }
     }
 
-    func turnOff() {
-        guard isOpen else { return }
-        if let json = Commands.turnOff() {
+    func send(_ uri: URI? = nil) {
+        guard isOpen else {
+            connect()
+            return
+        }
+        if let json = Commands.send(uri: uri) {
             socket.send(json)
         }
     }

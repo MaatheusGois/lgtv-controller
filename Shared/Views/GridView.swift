@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// MARK: - Grid
+// MARK: - Cell
 
 struct GridView: View {
 

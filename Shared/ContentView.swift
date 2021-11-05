@@ -26,33 +26,15 @@ struct ContentView: View {
             GridView(
                 grid: [
                     .init(
-                        title: "Button 1",
+                        title: "volumeUp",
                         action: {
-                            socketHelper.showToast(message: "Button 1")
+                            socketHelper.send(.volumeUp)
                         }
                     ),
                     .init(
-                        title: "Button 2",
+                        title: "volumeDown",
                         action: {
-                            print("Button 2")
-                        }
-                    ),
-                    .init(
-                        title: "Button 3",
-                        action: {
-                            print("Button 3")
-                        }
-                    ),
-                    .init(
-                        title: "Button 4",
-                        action: {
-                            print("Button 4")
-                        }
-                    ),
-                    .init(
-                        title: "Button 5",
-                        action: {
-                            print("Button 5")
+                            socketHelper.send(.volumeDown)
                         }
                     )
                 ]

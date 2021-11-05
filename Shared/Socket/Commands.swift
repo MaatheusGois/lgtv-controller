@@ -36,14 +36,6 @@ extension Commands {
     }
 }
 
-// MARK: - Power
-
-extension Commands {
-    static func turnOff() -> String? {
-        send(uri: .turnOff)
-    }
-}
-
 // MARK: - Register
 
 extension Commands {
