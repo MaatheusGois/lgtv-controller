@@ -28,7 +28,11 @@ class SocketHelper: ObservableObject {
 
     @Published var isOpen = false
     @Published var errorIsPresented = false
-    @Published var error = ""
+    @Published var error: String = .empty
+
+    // Computed
+
+    var state: String { isOpen ? "ON" : "OFF" }
 
     // Lifecycle
 
@@ -51,6 +55,9 @@ class SocketHelper: ObservableObject {
                         self.isOpen = true
                     }
                     print("Socket is open...")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.register()
+                    }
                 case .success(let data):
                     print("Received \(data)")
                     self.receiveData(data: data)
@@ -61,15 +68,13 @@ class SocketHelper: ObservableObject {
         )
     }
 
-    // MARK: - Methods
-
     func connect() {
         socket.connect()
     }
 
     func register() {
         guard isOpen else { return }
-        if let json = Communicator.register.json {
+        if let json = Commands.register() {
             socket.send(json)
         }
     }
@@ -96,7 +101,8 @@ class SocketHelper: ObservableObject {
 
     func registered(_ model: Communicator) {
         if let clientKey = model.payload?.clientKey {
-            CommonData.shared.clientKey = clientKey
+            DataStorage.clientKey = clientKey
+            showToast(message: "success.connection".localized)
         } else {
             error()
         }
@@ -104,14 +110,14 @@ class SocketHelper: ObservableObject {
 
     func showToast(message: String) {
         guard isOpen else { return }
-        if let json = Communicator.message(message).json {
+        if let json = Commands.message(message) {
             socket.send(json)
         }
     }
 
     func turnOff() {
         guard isOpen else { return }
-        if let json = Communicator.turnOff.json {
+        if let json = Commands.turnOff() {
             socket.send(json)
         }
     }

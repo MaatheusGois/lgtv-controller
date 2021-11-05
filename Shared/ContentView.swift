@@ -13,24 +13,50 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Text("Socket: \(socketHelper.isOpen ? "ON" : "OFF")")
-                .padding()
 
-            Button("Connect Socket") {
-                socketHelper.connect()
-            }.padding()
+            HStack {
+                Button("Conectar") {
+                    socketHelper.connect()
+                }.padding()
+                Spacer()
+                Text("title".localized(socketHelper.state))
+                    .padding()
+            }
 
-            Button("Connect TV") {
-                socketHelper.register()
-            }.padding()
-
-            Button("Show message") {
-                socketHelper.showToast(message: "Message")
-            }.padding()
-
-            Button("Turn off") {
-                socketHelper.turnOff()
-            }.padding()
+            GridView(
+                grid: [
+                    .init(
+                        title: "Button 1",
+                        action: {
+                            socketHelper.showToast(message: "Button 1")
+                        }
+                    ),
+                    .init(
+                        title: "Button 2",
+                        action: {
+                            print("Button 2")
+                        }
+                    ),
+                    .init(
+                        title: "Button 3",
+                        action: {
+                            print("Button 3")
+                        }
+                    ),
+                    .init(
+                        title: "Button 4",
+                        action: {
+                            print("Button 4")
+                        }
+                    ),
+                    .init(
+                        title: "Button 5",
+                        action: {
+                            print("Button 5")
+                        }
+                    )
+                ]
+            )
 
         }.alert(
             socketHelper.error,

@@ -9,13 +9,10 @@ import Foundation
 
 // Class
 
-final class CommonData {
-
-    // Init
-    private init() {}
-    static let shared = CommonData()
+struct DataStorage {
 
     // Properties
+
     @UserDefaultAccess(key: "clientKey", defaultValue: nil)
-    var clientKey: String?
+    static var clientKey: String?
 }

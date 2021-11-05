@@ -1,48 +1,54 @@
 //
-//  ComunicationnDataModel.swift
+//  Commands.swift
 //  controller
 //
-//  Created by Matheus Gois on 03/11/21.
+//  Created by Matheus Gois on 04/11/21.
 //
 
 import Foundation
 
-enum CommunicatorType: String, JsonFomatter {
-    case register
-    case error
-    case registered
-    case request
+// Commands
+
+struct Commands {
+
+    // MARK: - Methods
+
+    static func send(
+        payload: Payload? = .init(),
+        uri: URI? = nil
+    ) -> String? {
+        Communicator(
+            type: .request,
+            payload: payload,
+            uri: uri
+        ).json
+    }
 }
 
-// MARK: - Welcome
+// MARK: - Toast
 
-struct Communicator: JsonFomatter {
-    var type: CommunicatorType?
-    var id: String? = nil
-    var payload: Payload?
-    var error: String? = nil
-    var uri: String? = nil
-
-    static func message(_ value: String) -> Self {
-        .init(
-            type: .request,
-            payload: .init(
-                clientKey: CommonData.shared.clientKey,
-                message: value
-            ),
-            uri: "ssap://system.notifications/createToast"
+extension Commands {
+    static func message(_ value: String) -> String? {
+        send(
+            payload: .init(message: value),
+            uri: .toast
         )
     }
+}
 
-    static var turnOff: Self {
-        .init(
-            type: .request,
-            uri: "ssap://system/turnOff"
-        )
+// MARK: - Power
+
+extension Commands {
+    static func turnOff() -> String? {
+        send(uri: .turnOff)
     }
+}
 
-    static var register: Self {
-        .init(
+// MARK: - Register
+
+extension Commands {
+    static func register() -> String? {
+        Communicator(
             type: .register,
             payload: .init(
                 id: "register_0",
@@ -108,78 +114,8 @@ struct Communicator: JsonFomatter {
                         )
                     ]
                 ),
-                clientKey: CommonData.shared.clientKey
+                clientKey: DataStorage.clientKey
             )
-        )
+        ).json
     }
-}
-
-// MARK: - Payload
-
-enum PairingType: String, JsonFomatter {
-    case prompt = "PROMPT"
-}
-
-struct Payload: JsonFomatter {
-    var id: String? = nil
-    var forcePairing: Bool? = nil
-    var pairingType: PairingType? = nil
-    var manifest: Manifest? = nil
-    var clientKey: String? = nil
-    var message: String? = nil
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case forcePairing
-        case pairingType
-        case manifest
-        case clientKey = "client-key"
-        case message
-    }
-}
-
-// MARK: - Manifest
-
-struct Manifest: JsonFomatter {
-    let manifestVersion: Int
-    let appVersion: String
-    let signed: Signed
-    let permissions: [String]
-    let signatures: [Signature]
-}
-
-// MARK: - Signature
-
-struct Signature: JsonFomatter {
-    let signatureVersion: Int
-    let signature: String
-}
-
-// MARK: - Signed
-
-struct Signed: JsonFomatter {
-    let created, appID, vendorID: String
-    let localizedAppNames: LocalizedAppNames
-    let localizedVendorNames: LocalizedVendorNames
-    let permissions: [String]
-    let serial: String
-
-    enum CodingKeys: String, CodingKey {
-        case created
-        case appID
-        case vendorID
-        case localizedAppNames, localizedVendorNames, permissions, serial
-    }
-}
-
-// MARK: - LocalizedAppNames
-
-struct LocalizedAppNames: JsonFomatter {
-    let pt: String
-}
-
-// MARK: - LocalizedVendorNames
-
-struct LocalizedVendorNames: JsonFomatter {
-    let pt: String
 }

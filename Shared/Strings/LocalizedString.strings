@@ -1,0 +1,19 @@
+/* 
+  LocalizedString.strings
+  controller
+
+  Created by Matheus Gois on 04/11/21.
+  
+*/
+
+// Controller
+
+"title" = "Socket: %@";
+
+// Error
+
+"error.connection" = "Problemas de conexão %@";
+
+// Success
+
+"success.connection" = "Controle conectado!";
