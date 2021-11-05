@@ -55,10 +55,10 @@ struct GridCell: View {
     var viewData: GridViewData
     var width: CGFloat {
         #if os(iOS)
-            return 90
+            return 80
         #endif
         #if os(macOS)
-            return 70
+            return 60
         #endif
         #if os(watchOS)
             return 50
@@ -71,12 +71,11 @@ struct GridCell: View {
     }
 
     var body: some View {
+
         Image(viewData.image.rawValue)
             .resizable()
-            .frame(
-                width: width,
-                height: width
-            )
+            .aspectRatio(1, contentMode: .fit)
+            .frame(width: width, height: width)
             .onTapGesture {
                 viewData.action?()
             }

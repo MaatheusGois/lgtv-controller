@@ -62,6 +62,7 @@ class SocketHelper: ObservableObject {
                     print("Received \(data)")
                     self.receiveData(data: data)
                 case .failure:
+                    self.error("failure")
                     self.socket.close()
                 }
             }
@@ -95,7 +96,7 @@ class SocketHelper: ObservableObject {
     func error(_ error: String? = nil) {
         DispatchQueue.main.async {
             self.errorIsPresented = true
-            self.error = error ?? "Problemas de conexão"
+            self.error = error ?? "error.connection".localized
         }
     }
 

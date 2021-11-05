@@ -13,6 +13,8 @@ struct controllerApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .padding(.top, 40)
+                    .ignoresSafeArea(.all)
             }
         }
 

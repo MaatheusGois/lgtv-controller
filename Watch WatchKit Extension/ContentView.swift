@@ -12,24 +12,25 @@ struct ContentView: View {
     @ObservedObject var socketHelper = SocketHelper(url: .init(string: "ws://192.168.18.3:3000")!)
 
     var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            ScrollView {
-                GridCell(.init(image: socketHelper.state, action: {
-                    socketHelper.send(.volumeDown)
-                }))
-                menu()
-                volume()
-                apps()
+        ScrollView {
+            GridCell(.init(image: socketHelper.state, action: {
+                socketHelper.send(.volumeDown)
+            }))
+
+            menu()
+            volume()
+            apps()
+        }
+        .padding()
+        .ignoresSafeArea(.all)
+        .padding(.bottom)
+        .alert(
+            socketHelper.error,
+            isPresented: $socketHelper.errorIsPresented
+        ) {
+            Button("OK", role: .none) {
+                socketHelper.errorIsPresented = false
             }
-            .alert(
-                socketHelper.error,
-                isPresented: $socketHelper.errorIsPresented
-            ) {
-                Button("OK", role: .none) {
-                    socketHelper.errorIsPresented = false
-                }
-            }.padding(.vertical)
         }
     }
 
