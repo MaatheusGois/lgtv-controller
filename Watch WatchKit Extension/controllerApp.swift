@@ -19,3 +19,10 @@ struct controllerApp: App {
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }
+
+struct ContentView_Previews_Watch: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 6 - 44mm"))
+    }
+}

@@ -75,6 +75,15 @@
 		8231F17D2734C99500F00B48 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0D32731A58400F00B48 /* SocketHelper.swift */; };
 		8231F17E2734C99500F00B48 /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0F927349B6E00F00B48 /* Manifest.swift */; };
 		8231F17F2734C99500F00B48 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0F627349B2F00F00B48 /* Commands.swift */; };
+		8231F1822734D6BA00F00B48 /* Image+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1812734D6BA00F00B48 /* Image+DesignSystem.swift */; };
+		8231F1832734D6BA00F00B48 /* Image+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1812734D6BA00F00B48 /* Image+DesignSystem.swift */; };
+		8231F1852734D73200F00B48 /* Image+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1812734D6BA00F00B48 /* Image+DesignSystem.swift */; };
+		8231F1872734E6C800F00B48 /* Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */; };
+		8231F1882734E6C800F00B48 /* Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */; };
+		8231F1892734E74E00F00B48 /* Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */; };
+		8231F18B2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */; };
+		8231F18C2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */; };
+		8231F18D2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +163,9 @@
 		8231F12F2734C50500F00B48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8231F1312734C50500F00B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8231F1322734C50500F00B48 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8231F1812734D6BA00F00B48 /* Image+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+DesignSystem.swift"; sourceTree = "<group>"; };
+		8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+DesignSystem.swift"; sourceTree = "<group>"; };
+		8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "controller--macOS--Info.plist"; path = "../../.Trash/controller--macOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +199,7 @@
 		8231F0AC2731A55800F00B48 = {
 			isa = PBXGroup;
 			children = (
+				8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */,
 				8231F0D62731A60400F00B48 /* controller--iOS--Info.plist */,
 				8231F0B12731A55900F00B48 /* Shared */,
 				8231F0C02731A55B00F00B48 /* macOS */,
@@ -200,6 +213,7 @@
 		8231F0B12731A55900F00B48 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8231F1802734D6A800F00B48 /* DesignSystem */,
 				8231F10C2734B11300F00B48 /* Strings */,
 				8231F0FF27349E6D00F00B48 /* Views */,
 				8231F0EB27338CEE00F00B48 /* DataStorage */,
@@ -344,6 +358,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8231F1802734D6A800F00B48 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				8231F1812734D6BA00F00B48 /* Image+DesignSystem.swift */,
+				8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -479,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8231F18B2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */,
 				8231F0C62731A55B00F00B48 /* Assets.xcassets in Resources */,
 				8231F10E2734B12000F00B48 /* LocalizedString.strings in Resources */,
 			);
@@ -488,6 +512,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8231F18C2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */,
 				8231F0C72731A55B00F00B48 /* Assets.xcassets in Resources */,
 				8231F10F2734B12000F00B48 /* LocalizedString.strings in Resources */,
 			);
@@ -507,6 +532,7 @@
 			files = (
 				8231F1302734C50500F00B48 /* Preview Assets.xcassets in Resources */,
 				8231F12D2734C50500F00B48 /* Assets.xcassets in Resources */,
+				8231F18D2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */,
 				8231F1782734C99500F00B48 /* Assets.xcassets in Resources */,
 				8231F16F2734C99500F00B48 /* LocalizedString.strings in Resources */,
 			);
@@ -520,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8231F0E1273377C700F00B48 /* Log+Extensions.swift in Sources */,
+				8231F1872734E6C800F00B48 /* Color+DesignSystem.swift in Sources */,
 				8231F0E527337B3100F00B48 /* Comunication.swift in Sources */,
 				8231F0FD27349B9E00F00B48 /* URI.swift in Sources */,
 				8231F0ED27338CFC00F00B48 /* CommonsData.swift in Sources */,
@@ -527,6 +554,7 @@
 				8231F0F027338D5F00F00B48 /* UserDefaultAccess.swift in Sources */,
 				8231F0D42731A58400F00B48 /* SocketHelper.swift in Sources */,
 				8231F0C42731A55B00F00B48 /* ContentView.swift in Sources */,
+				8231F1822734D6BA00F00B48 /* Image+DesignSystem.swift in Sources */,
 				8231F0F727349B2F00F00B48 /* Commands.swift in Sources */,
 				8231F0C22731A55B00F00B48 /* controllerApp.swift in Sources */,
 				8231F0FA27349B6E00F00B48 /* Manifest.swift in Sources */,
@@ -544,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8231F0E2273377C700F00B48 /* Log+Extensions.swift in Sources */,
+				8231F1882734E6C800F00B48 /* Color+DesignSystem.swift in Sources */,
 				8231F0E627337B3100F00B48 /* Comunication.swift in Sources */,
 				8231F0FE27349B9E00F00B48 /* URI.swift in Sources */,
 				8231F0EE27338CFC00F00B48 /* CommonsData.swift in Sources */,
@@ -551,6 +580,7 @@
 				8231F0F127338D5F00F00B48 /* UserDefaultAccess.swift in Sources */,
 				8231F0D52731A58400F00B48 /* SocketHelper.swift in Sources */,
 				8231F0C52731A55B00F00B48 /* ContentView.swift in Sources */,
+				8231F1832734D6BA00F00B48 /* Image+DesignSystem.swift in Sources */,
 				8231F0F827349B2F00F00B48 /* Commands.swift in Sources */,
 				8231F0C32731A55B00F00B48 /* controllerApp.swift in Sources */,
 				8231F0FB27349B6E00F00B48 /* Manifest.swift in Sources */,
@@ -584,8 +614,10 @@
 				8231F1772734C99500F00B48 /* Index+Extennsions.swift in Sources */,
 				8231F17F2734C99500F00B48 /* Commands.swift in Sources */,
 				8231F12B2734C50400F00B48 /* ComplicationController.swift in Sources */,
+				8231F1852734D73200F00B48 /* Image+DesignSystem.swift in Sources */,
 				8231F1232734C50300F00B48 /* controllerApp.swift in Sources */,
 				8231F1292734C50300F00B48 /* NotificationView.swift in Sources */,
+				8231F1892734E74E00F00B48 /* Color+DesignSystem.swift in Sources */,
 				8231F17A2734C99500F00B48 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

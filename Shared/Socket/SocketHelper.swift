@@ -32,7 +32,7 @@ class SocketHelper: ObservableObject {
 
     // Computed
 
-    var state: String { isOpen ? "ON" : "OFF" }
+    var state: DSImage { isOpen ? .powerOn : .powerOff }
 
     // Lifecycle
 

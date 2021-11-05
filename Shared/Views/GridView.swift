@@ -28,7 +28,7 @@ struct GridView: View {
     }
 
     var body: some View {
-        List {
+        VStack {
             ForEach(.zero..<index) { i in
                 HStack {
                     ForEach(.zero..<collums) { k in
@@ -44,7 +44,7 @@ struct GridView: View {
 
 struct GridViewData: Identifiable {
     var id: UUID { .init() }
-    let title: String
+    let image: DSImage
     var action: (() -> Void)?
 }
 
@@ -53,6 +53,17 @@ struct GridViewData: Identifiable {
 struct GridCell: View {
 
     var viewData: GridViewData
+    var width: CGFloat {
+        #if os(iOS)
+            return 90
+        #endif
+        #if os(macOS)
+            return 70
+        #endif
+        #if os(watchOS)
+            return 50
+        #endif
+    }
 
     init?(_ viewData: GridViewData?) {
         guard let viewData = viewData else { return nil }
@@ -60,10 +71,14 @@ struct GridCell: View {
     }
 
     var body: some View {
-        Text(viewData.title)
+        Image(viewData.image.rawValue)
+            .resizable()
+            .frame(
+                width: width,
+                height: width
+            )
             .onTapGesture {
                 viewData.action?()
             }
-            .frame(maxWidth: .infinity)
     }
 }
