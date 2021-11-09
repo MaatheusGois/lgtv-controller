@@ -26,6 +26,7 @@ enum URI: String, JsonFomatter {
 
     case getStatus = "ssap://audio/getStatus"
     case getCurrentSWInformation = "ssap://com.webos.service.update/getCurrentSWInformation"
+    case getInputSocket = "ssap://com.webos.service.networkinput/getPointerInputSocket"
 
     // Volume
     case volumeUp = "ssap://audio/volumeUp"

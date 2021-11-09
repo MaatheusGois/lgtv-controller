@@ -7,7 +7,6 @@
 
 import WebSocket
 import WebSocketProtocol
-import Foundation
 import SwiftUI
 import Combine
 
@@ -17,22 +16,26 @@ class SocketHelper: ObservableObject {
 
     // Internal
 
-    internal lazy var socket = WebSocket(url: url)
+    internal var socket: WebSocket?
 
     // Private
 
     private var sub: AnyCancellable?
+    private var buttonSub: AnyCancellable?
     private let url: URL
+    private var buttonSocket: WebSocket?
+    private var buttonType: CommunicatorButton?
+    private var clientSocket: URLSessionWebSocketTask?
 
     // Published
 
-    @Published var isOpen = false
+    @Published var isConnected = false
     @Published var errorIsPresented = false
     @Published var error: String = .empty
 
     // Computed
 
-    var state: DSImage { isOpen ? .powerOn : .powerOff }
+    var state: DSImage { isConnected ? .powerOn : .powerOff }
 
     // Lifecycle
 
@@ -44,16 +47,16 @@ class SocketHelper: ObservableObject {
     // Methods
 
     func setupSocket() {
-        sub = socket.sink(
+        socket = WebSocket(url: url)
+        sub = socket?.sink(
             receiveCompletion: {
+                DispatchQueue.main.async { self.isConnected = false }
                 print("Socket closed: \(String(describing: $0))")
             },
-            receiveValue: { (result) in
+            receiveValue: { result in
                 switch result {
                 case .success(.open):
-                    DispatchQueue.main.async {
-                        self.isOpen = true
-                    }
+                    DispatchQueue.main.async { self.isConnected = true }
                     print("Socket is open...")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.register()
@@ -61,23 +64,24 @@ class SocketHelper: ObservableObject {
                 case .success(let data):
                     print("Received \(data)")
                     self.receiveData(data: data)
-                case .failure:
-                    self.error("failure")
-                    self.socket.close()
+                case .failure(let error):
+                    DispatchQueue.main.async { self.isConnected = false }
+                    self.error(error.localizedDescription)
+                    self.socket?.close()
                 }
             }
         )
     }
 
     func connect() {
-        socket.connect()
+        setupSocket()
+        socket?.connect()
     }
 
     func register() {
-        guard isOpen else { return }
-        if let json = Commands.register() {
-            socket.send(json)
-        }
+        guard isConnected else { return }
+
+        socket?.send(Paring.key)
     }
 
     func receiveData(data: WebSocketMessage) {
@@ -87,10 +91,44 @@ class SocketHelper: ObservableObject {
                 error(model.error)
             case .registered:
                 registered(model)
+            case .response:
+                receiveResponse(model)
             default:
                 break
             }
         }
+    }
+
+    func receiveResponse(_ model: Communicator) {
+        if let url = model.payload?.socketPath {
+            socketInputButton(url)
+            return
+        }
+    }
+
+    func socketInputButton(_ url: String) {
+        guard let type = buttonType else { return }
+        buttonSocket = WebSocket(url: .init(string: url)!)
+        buttonSub = buttonSocket?.sink(
+            receiveCompletion: {
+                print("socketCommand closed: \(String(describing: $0))")
+            },
+            receiveValue: { result in
+                switch result {
+                case .success(.open(let client)):
+                    print("socketCommand is open...")
+                    self.clientSocket = client
+                    client.send(type.message) { _ in }
+                case .success(let data):
+                    print("Received \(data)")
+                case .failure(let error):
+                    self.error(error.localizedDescription)
+                    self.socket?.close()
+                }
+            }
+        )
+
+        buttonSocket?.connect()
     }
 
     func error(_ error: String? = nil) {
@@ -110,20 +148,34 @@ class SocketHelper: ObservableObject {
     }
 
     func showToast(message: String) {
-        guard isOpen else { return }
+        guard isConnected else { return }
         if let json = Commands.message(message) {
-            socket.send(json)
+            socket?.send(json)
         }
     }
 
     func send(_ uri: URI? = nil) {
-        guard isOpen else {
+        guard isConnected else {
             connect()
             return
         }
         if let json = Commands.send(uri: uri) {
-            socket.send(json)
+            register()
+            socket?.send(json)
         }
+    }
+
+    func button(_ type: CommunicatorButton) {
+        guard isConnected else {
+            connect()
+            return
+        }
+        buttonType = type
+        if let client = clientSocket {
+            client.send(type.message) { _ in }
+            return
+        }
+        send(.getInputSocket)
     }
 }
 

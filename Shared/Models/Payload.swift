@@ -14,37 +14,35 @@ enum PairingType: String, JsonFomatter {
 }
 
 struct Payload: JsonFomatter {
-    var id: String? = nil
-    var forcePairing: Bool? = nil
-    var pairingType: PairingType? = nil
-    var manifest: Manifest? = nil
-    var clientKey: String? = nil
-    var message: String? = nil
+    var forcePairing: Bool?
+    var pairingType: PairingType?
+    var clientKey: String?
+    var message: String?
+    var name: String?
+    var socketPath: String?
 
     enum CodingKeys: String, CodingKey {
-        case id
         case forcePairing
         case pairingType
-        case manifest
         case clientKey = "client-key"
         case message
+        case name
+        case socketPath
     }
 
     // Lifecycle
 
     init(
-        id: String? = nil,
         forcePairing: Bool? = nil,
         pairingType: PairingType? = nil,
-        manifest: Manifest? = nil,
         clientKey: String? = nil,
-        message: String? = nil
+        message: String? = nil,
+        name: String? = nil
     ) {
-        self.id = id
         self.forcePairing = forcePairing
         self.pairingType = pairingType
-        self.manifest = manifest
         self.clientKey = clientKey ?? DataStorage.clientKey
         self.message = message
+        self.name = name
     }
 }

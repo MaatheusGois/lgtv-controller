@@ -12,14 +12,15 @@ enum CommunicatorType: String, JsonFomatter {
     case error
     case registered
     case request
+    case response
 }
 
 // MARK: - Communicator
 
 struct Communicator: JsonFomatter {
     var type: CommunicatorType?
-    var id: String? = nil
-    var payload: Payload?
-    var error: String? = nil
-    var uri: URI? = nil
+    var id: String?
+    var uri: URI?
+    var payload: Payload? = .init()
+    var error: String?
 }

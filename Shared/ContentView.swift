@@ -16,7 +16,7 @@ struct ContentView: View {
             Color.black.ignoresSafeArea()
             ScrollView {
                 GridCell(.init(image: socketHelper.state, action: {
-                    socketHelper.send(.volumeDown)
+                    socketHelper.connect()
                 }))
                 menu()
                 volume()
@@ -37,40 +37,43 @@ struct ContentView: View {
         VStack {
             HStack {
                 GridCell(.init(image: .home, action: {
-                    socketHelper.send(.volumeDown)
+                    socketHelper.button(.home)
                 }))
 
                 GridCell(.init(image: .up, action: {
+                    socketHelper.button(.up)
                 }))
 
                 GridCell(.init(image: .apps, action: {
-                    socketHelper.send(.volumeUp)
+                    socketHelper.button(.menu)
                 }))
             }
 
             HStack {
                 GridCell(.init(image: .left, action: {
-                    socketHelper.send(.volumeDown)
+                    socketHelper.button(.left)
                 }))
 
                 GridCell(.init(image: .center, action: {
+                    socketHelper.button(.enter)
                 }))
 
                 GridCell(.init(image: .right, action: {
-                    socketHelper.send(.volumeUp)
+                    socketHelper.button(.right)
                 }))
             }
 
             HStack {
                 GridCell(.init(image: .back, action: {
-                    socketHelper.send(.volumeDown)
+                    socketHelper.button(.back)
                 }))
 
                 GridCell(.init(image: .down, action: {
+                    socketHelper.button(.down)
                 }))
 
                 GridCell(.init(image: .exit, action: {
-                    socketHelper.send(.volumeUp)
+                    socketHelper.button(.exit)
                 }))
             }
         }
@@ -79,14 +82,14 @@ struct ContentView: View {
     func volume() -> some View {
         HStack {
             GridCell(.init(image: .down, action: {
-                socketHelper.send(.volumeDown)
+                socketHelper.button(.volumeDown)
             }))
 
             GridCell(.init(image: .vol, action: {
             }))
 
             GridCell(.init(image: .up, action: {
-                socketHelper.send(.volumeUp)
+                socketHelper.button(.volumeUp)
             }))
         }
     }
