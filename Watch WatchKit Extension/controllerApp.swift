@@ -12,7 +12,7 @@ struct controllerApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                HomeView()
                     .padding(.top, 40)
                     .ignoresSafeArea(.all)
             }
@@ -24,7 +24,7 @@ struct controllerApp: App {
 
 struct ContentView_Previews_Watch: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
             .previewDevice(PreviewDevice(rawValue: "Apple Watch Series 6 - 44mm"))
     }
 }

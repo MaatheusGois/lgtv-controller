@@ -16,7 +16,10 @@ struct controllerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+            #if os(macOS)
+                .frame(width: 230, height: 450)
+            #endif
         }
     }
 }

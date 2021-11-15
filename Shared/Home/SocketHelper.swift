@@ -56,7 +56,6 @@ class SocketHelper: ObservableObject {
             receiveValue: { result in
                 switch result {
                 case .success(.open):
-                    DispatchQueue.main.async { self.isConnected = true }
                     print("Socket is open...")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.register()
@@ -74,6 +73,7 @@ class SocketHelper: ObservableObject {
     }
 
     func connect() {
+        clientSocket = nil
         setupSocket()
         socket?.connect()
     }
@@ -119,6 +119,8 @@ class SocketHelper: ObservableObject {
                     print("socketCommand is open...")
                     self.clientSocket = client
                     client.send(type.message) { _ in }
+                    self.showToast(message: "success.connection".localized)
+                    DispatchQueue.main.async { self.isConnected = true }
                 case .success(let data):
                     print("Received \(data)")
                 case .failure(let error):
@@ -141,7 +143,7 @@ class SocketHelper: ObservableObject {
     func registered(_ model: Communicator) {
         if let clientKey = model.payload?.clientKey {
             DataStorage.clientKey = clientKey
-            showToast(message: "success.connection".localized)
+            send(.getInputSocket)
         } else {
             error()
         }

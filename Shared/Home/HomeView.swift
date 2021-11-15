@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  Watch WatchKit Extension
 //
 //  Created by Matheus Gois on 05/11/21.
@@ -7,11 +7,18 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
 
     @ObservedObject var socketHelper = SocketHelper(url: .init(string: "ws://192.168.18.3:3000")!)
 
     var body: some View {
+        ZStack {
+            content
+        }
+
+    }
+
+    var content: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             ScrollView {
@@ -112,6 +119,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }

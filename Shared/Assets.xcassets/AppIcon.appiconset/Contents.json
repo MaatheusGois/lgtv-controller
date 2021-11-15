@@ -181,6 +181,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "sadfa.jpg",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -204,6 +205,7 @@
       "subtype" : "40mm"
     },
     {
+      "filename" : "image 8.jpg",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -219,6 +221,7 @@
       "subtype" : "44mm"
     },
     {
+      "filename" : "image1.jpg",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -250,6 +253,7 @@
       "subtype" : "44mm"
     },
     {
+      "filename" : "image3.jpg",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
