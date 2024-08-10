@@ -5,17 +5,19 @@
 //  Created by Matheus Gois on 02/11/21.
 //
 
-import Foundation
+import SwiftUI
 
 enum Log {
     case prod
     case uat
 }
 
-struct Environment {
+class Environment: ObservableObject {
 
     private init() {}
-    static var shared = Self()
+    static var shared = Environment()
 
-    var log: Log = .uat
+    @Published var log: Log = .uat
+
+    @AppStorage("ip") var ip: String = ""
 }

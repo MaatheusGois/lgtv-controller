@@ -22,7 +22,9 @@ class SocketHelper: ObservableObject {
 
     private var sub: AnyCancellable?
     private var buttonSub: AnyCancellable?
-    private let url: URL
+    private var url: URL? {
+        .init(string: "ws://\(Environment.shared.ip):3000")
+    }
     private var buttonSocket: WebSocket?
     private var buttonType: CommunicatorButton?
     private var clientSocket: URLSessionWebSocketTask?
@@ -37,21 +39,15 @@ class SocketHelper: ObservableObject {
 
     var state: DSImage { isConnected ? .powerOn : .powerOff }
 
-    // Lifecycle
-
-    init(url: URL) {
-        self.url = url
-        setupSocket()
-    }
-
     // Methods
 
     func setupSocket() {
+        guard let url else { return }
         socket = WebSocket(url: url)
         sub = socket?.sink(
             receiveCompletion: {
                 DispatchQueue.main.async { self.isConnected = false }
-                print("Socket closed: \(String(describing: $0))")
+                self.error("Socket closed: \(String(describing: $0))")
             },
             receiveValue: { result in
                 switch result {
@@ -111,7 +107,7 @@ class SocketHelper: ObservableObject {
         buttonSocket = WebSocket(url: .init(string: url)!)
         buttonSub = buttonSocket?.sink(
             receiveCompletion: {
-                print("socketCommand closed: \(String(describing: $0))")
+                self.error("socketCommand closed: \(String(describing: $0))")
             },
             receiveValue: { result in
                 switch result {
@@ -180,4 +176,3 @@ class SocketHelper: ObservableObject {
         send(.getInputSocket)
     }
 }
-

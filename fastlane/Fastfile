@@ -1,0 +1,13 @@
+default_platform :ios
+
+platform :ios do
+  lane :beta do
+    increment_build_number
+
+    gym(
+      scheme: "controller (macOS)",
+      export_method: "package"
+    )
+  end
+
+end

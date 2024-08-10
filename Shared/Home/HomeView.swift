@@ -9,13 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
 
-    @ObservedObject var socketHelper = SocketHelper(url: .init(string: "ws://192.168.18.3:3000")!)
+    @ObservedObject var socketHelper = SocketHelper()
 
     var body: some View {
         ZStack {
             content
         }
-
     }
 
     var content: some View {
@@ -34,6 +33,7 @@ struct HomeView: View {
                 isPresented: $socketHelper.errorIsPresented
             ) {
                 Button("OK", role: .none) {
+                    Environment.shared.ip = ""
                     socketHelper.errorIsPresented = false
                 }
             }.padding(.vertical)

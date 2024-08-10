@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EE7171D2C6702B900DBF4CA /* SetupIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7171C2C6702B900DBF4CA /* SetupIPView.swift */; };
+		2EE7171E2C6702B900DBF4CA /* SetupIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7171C2C6702B900DBF4CA /* SetupIPView.swift */; };
+		2EE7171F2C6702B900DBF4CA /* SetupIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7171C2C6702B900DBF4CA /* SetupIPView.swift */; };
 		8231F0C22731A55B00F00B48 /* controllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0B22731A55900F00B48 /* controllerApp.swift */; };
 		8231F0C32731A55B00F00B48 /* controllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0B22731A55900F00B48 /* controllerApp.swift */; };
 		8231F0C42731A55B00F00B48 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F0B32731A55900F00B48 /* HomeView.swift */; };
@@ -133,6 +136,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2EE7171C2C6702B900DBF4CA /* SetupIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupIPView.swift; sourceTree = "<group>"; };
 		8231F0B22731A55900F00B48 /* controllerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controllerApp.swift; sourceTree = "<group>"; };
 		8231F0B32731A55900F00B48 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8231F0B42731A55B00F00B48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +207,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EE7171B2C6702A500DBF4CA /* SetupIP */ = {
+			isa = PBXGroup;
+			children = (
+				2EE7171C2C6702B900DBF4CA /* SetupIPView.swift */,
+			);
+			path = SetupIP;
+			sourceTree = "<group>";
+		};
 		8231F0AC2731A55800F00B48 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +239,7 @@
 				8231F0E327337B1F00F00B48 /* Models */,
 				8231F0B22731A55900F00B48 /* controllerApp.swift */,
 				82C77449273A24690027C27E /* Home */,
+				2EE7171B2C6702A500DBF4CA /* SetupIP */,
 				8231F0DF273377B200F00B48 /* Extension */,
 				8231F0DB2731AF3200F00B48 /* Environment */,
 				8231F0DA2731AF1A00F00B48 /* Socket */,
@@ -562,6 +575,7 @@
 				8231F0E1273377C700F00B48 /* Log+Extensions.swift in Sources */,
 				8231F1872734E6C800F00B48 /* Color+DesignSystem.swift in Sources */,
 				8231F0E527337B3100F00B48 /* Comunication.swift in Sources */,
+				2EE7171D2C6702B900DBF4CA /* SetupIPView.swift in Sources */,
 				823805D0273792D10077DA5C /* CommunicatorButtons.swift in Sources */,
 				8231F0FD27349B9E00F00B48 /* URI.swift in Sources */,
 				8231F0ED27338CFC00F00B48 /* CommonsData.swift in Sources */,
@@ -590,6 +604,7 @@
 				8231F0E2273377C700F00B48 /* Log+Extensions.swift in Sources */,
 				8231F1882734E6C800F00B48 /* Color+DesignSystem.swift in Sources */,
 				8231F0E627337B3100F00B48 /* Comunication.swift in Sources */,
+				2EE7171E2C6702B900DBF4CA /* SetupIPView.swift in Sources */,
 				823805D1273792D10077DA5C /* CommunicatorButtons.swift in Sources */,
 				8231F0FE27349B9E00F00B48 /* URI.swift in Sources */,
 				8231F0EE27338CFC00F00B48 /* CommonsData.swift in Sources */,
@@ -615,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE7171F2C6702B900DBF4CA /* SetupIPView.swift in Sources */,
 				8231F1272734C50300F00B48 /* NotificationController.swift in Sources */,
 				8231F1752734C99500F00B48 /* String+Extensions.swift in Sources */,
 				8231F1742734C99500F00B48 /* Comunication.swift in Sources */,
@@ -782,7 +798,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "controller (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -816,7 +832,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "controller (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -846,13 +862,13 @@
 		8231F0CE2731A55B00F00B48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -876,13 +892,13 @@
 		8231F0CF2731A55B00F00B48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -908,7 +924,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "Watch\\ WatchKit\\ Extension/Preview\\ Content";
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				ENABLE_PREVIEWS = YES;
@@ -939,7 +955,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "Watch\\ WatchKit\\ Extension/Preview\\ Content";
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				ENABLE_PREVIEWS = YES;
@@ -974,7 +990,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Watch_WatchKit_Extension;
@@ -1001,7 +1017,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = CTAFH43K36;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = Watch_WatchKit_Extension;
