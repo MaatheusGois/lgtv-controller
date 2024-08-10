@@ -73,9 +73,6 @@
 		8231F1872734E6C800F00B48 /* Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */; };
 		8231F1882734E6C800F00B48 /* Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */; };
 		8231F1892734E74E00F00B48 /* Color+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */; };
-		8231F18B2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */; };
-		8231F18C2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */; };
-		8231F18D2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */; };
 		823805B42735E7DD0077DA5C /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823805B32735E7DD0077DA5C /* HapticHelper.swift */; };
 		823805B52735E7DE0077DA5C /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823805B32735E7DD0077DA5C /* HapticHelper.swift */; };
 		823805B62735E7DE0077DA5C /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823805B32735E7DD0077DA5C /* HapticHelper.swift */; };
@@ -169,7 +166,6 @@
 		8231F1322734C50500F00B48 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		8231F1812734D6BA00F00B48 /* Image+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+DesignSystem.swift"; sourceTree = "<group>"; };
 		8231F1862734E6C700F00B48 /* Color+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+DesignSystem.swift"; sourceTree = "<group>"; };
-		8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "controller--macOS--Info.plist"; path = "../../.Trash/controller--macOS--Info.plist"; sourceTree = "<group>"; };
 		823805B32735E7DD0077DA5C /* HapticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
 		823805BD273638E90077DA5C /* Paring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paring.swift; sourceTree = "<group>"; };
 		823805CC27365C020077DA5C /* controller (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "controller (iOS).entitlements"; sourceTree = "<group>"; };
@@ -211,11 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				823805CC27365C020077DA5C /* controller (iOS).entitlements */,
-				8231F18A2734EF6400F00B48 /* controller--macOS--Info.plist */,
 				8231F0D62731A60400F00B48 /* controller--iOS--Info.plist */,
 				8231F0B12731A55900F00B48 /* Shared */,
 				8231F0C02731A55B00F00B48 /* macOS */,
-				8231F1162734C4FE00F00B48 /* Watch */,
 				8231F1212734C50300F00B48 /* Watch WatchKit Extension */,
 				8231F0BA2731A55B00F00B48 /* Products */,
 				8231F1102734C43A00F00B48 /* Frameworks */,
@@ -340,17 +334,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8231F1162734C4FE00F00B48 /* Watch */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Watch;
-			sourceTree = "<group>";
-		};
 		8231F1212734C50300F00B48 /* Watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				823805AD2735D25A0077DA5C /* Views */,
 				8231F1222734C50300F00B48 /* controllerApp.swift */,
 				823805AC2735D24E0077DA5C /* Notification */,
 				8231F1312734C50500F00B48 /* Info.plist */,
@@ -385,13 +371,6 @@
 				8231F12A2734C50400F00B48 /* ComplicationController.swift */,
 			);
 			path = Notification;
-			sourceTree = "<group>";
-		};
-		823805AD2735D25A0077DA5C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		82C77449273A24690027C27E /* Home */ = {
@@ -542,7 +521,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8231F18B2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */,
 				8231F0C62731A55B00F00B48 /* Assets.xcassets in Resources */,
 				8231F10E2734B12000F00B48 /* LocalizedString.strings in Resources */,
 			);
@@ -552,7 +530,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8231F18C2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */,
 				8231F0C72731A55B00F00B48 /* Assets.xcassets in Resources */,
 				8231F10F2734B12000F00B48 /* LocalizedString.strings in Resources */,
 			);
@@ -570,7 +547,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8231F1302734C50500F00B48 /* Preview Assets.xcassets in Resources */,
-				8231F18D2734EF6400F00B48 /* controller--macOS--Info.plist in Resources */,
 				8231F1782734C99500F00B48 /* Assets.xcassets in Resources */,
 				8231F16F2734C99500F00B48 /* LocalizedString.strings in Resources */,
 			);

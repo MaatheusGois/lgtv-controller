@@ -1,0 +1,42 @@
+{
+  "originHash" : "e881121830de41d040d10920f0ca4fed4962beb77271a4ac5150d53635a65895",
+  "pins" : [
+    {
+      "identity" : "awake",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MaatheusGois/Awake",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d25c2356823a0e1c991c0d95eff3228a0c42e799"
+      }
+    },
+    {
+      "identity" : "synchronized",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shareup/synchronized.git",
+      "state" : {
+        "revision" : "32f43e551c0c552378467f5f31486d0715374a08",
+        "version" : "3.2.0"
+      }
+    },
+    {
+      "identity" : "websocket-apple",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MaatheusGois/websocket-apple",
+      "state" : {
+        "branch" : "feature/returnn-client-socket",
+        "revision" : "e643db6f4bb494ebcf88806db409417fbee26830"
+      }
+    },
+    {
+      "identity" : "websocket-protocol",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MaatheusGois/websocket-protocol.git",
+      "state" : {
+        "branch" : "feature/returnn-client-socket",
+        "revision" : "fab910639a5fe3f6a093c1c02ae3b662fe54a02c"
+      }
+    }
+  ],
+  "version" : 3
+}
